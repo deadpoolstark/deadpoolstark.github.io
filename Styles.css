@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+    body {
+      background-color: #272727;
+      color:#14A76c ;
+      font-family: 'Roboto Mono', monospace;
+      overflow: hidden;
+    }
+    footer{
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #030701;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;      
+      animation: slide-in 0.5s forwards;
+      transform: translateX(-150%);
+      }
+      .card-1 {
+        animation-delay: 1s;;
+      }
+      .card-2 {
+        animation-delay: 1.5s;
+      }
+      .card-3 {
+        animation-delay: 2s;
+      }
+      .card-0{
+        text-align: center;
+      }
+      .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+      }
+
+        .menu li {
+        padding: 10px;
+        margin-top: 20px;
+        margin-left: 20px;
+        
+        }
+
+        .menu a {
+        text-decoration: none;
+        color: #14A76c;
+        background-color: #030701;
+        padding: 10px;
+        border-radius: 5px;
+        display: block;
+        text-align: center;
+        }
+
+        .menu a:hover {
+        background-color: #666;
+        }
+       
+       
+       
+    hr{
+        background-color: #666;
+        height:auto;
+        width: 100%;
+      }
+      #audio-player {
+        display: none;
+      }
+      
+
+
+      @keyframes slide-in {
+        0% {
+          transform: translateX(-100%) scale(1);
+        }
+        60% {
+          transform: translateX(0) scale(1.05);
+        }
+        80% {
+          transform: translateX(0) scale(1);
+        }
+        100% {
+          transform: translateX(0) scale(1);
+        }
+      }     

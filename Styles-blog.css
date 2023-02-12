@@ -1,0 +1,94 @@
+body {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: #2c3e50;
+    color: #ecf0f1 ;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  header h1 {
+    margin: 10px;
+  }
+  .pill {
+    font-size: 1em;
+    font-family: "Readex Pro", sans-serif;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: #7f8c8d;
+    cursor: pointer;
+  }
+  
+  .pill:not(.pill--selected):hover {
+    background: #cccccc;
+  }
+  
+  .pill--selected {
+    background: #009578;
+    color: #ffffff;
+  }
+  
+ 
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  article{
+    background-color: #7f8c8d;
+    border: 1px solid #34495e;
+    padding: 1rem;
+    width: calc(33.33% - 10px);
+    border-radius: 10px;
+    margin: 10px;
+
+  }
+  
+  .right{
+    animation: slide-in-left 1.25s ease-out;
+  }
+  
+  .left {
+    animation: slide-in-right 1.25s ease-out;
+  }
+  
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  footer {
+    color: #34495e;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+  }
+  
