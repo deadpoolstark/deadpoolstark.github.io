@@ -72,7 +72,31 @@
         display: none;
       }
       
-
+    /*from styles.blog.css*/     
+     .pill {
+        font-size: 1em;
+        font-family: "Readex Pro", sans-serif;
+        padding: 1em;
+        margin: 1em;
+        border-radius: 1em;
+        border: none;
+        outline: none;
+        background: #030701;
+        cursor: pointer;
+        color: #14A76c;
+      }
+      
+      .pill:not(.pill--selected):hover {
+        background: #666;
+      }
+      
+      .pill--selected {
+        background: #009578;
+        color: #ffffff;
+      }
+      .pill:active{
+        
+      }
 
       @keyframes slide-in {
         0% {
