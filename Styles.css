@@ -94,10 +94,6 @@
         background: #009578;
         color: #ffffff;
       }
-      .pill:active{
-        
-      }
-
       @keyframes slide-in {
         0% {
           transform: translateX(-100%) scale(1);
