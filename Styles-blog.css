@@ -1,10 +1,13 @@
 body {
     font-family: 'Space Mono', monospace;;
-    background:linear-gradient(to bottom right,rgb(16, 0, 43) 10%,rgb(60, 9, 108),rgb(157, 78, 221));
+    background:linear-gradient(to bottom right,rgb(16, 0, 43),rgb(60, 9, 108),rgb(157, 78, 221));
     color: #ecf0f1 ;
     margin: 0;
     padding: 0;
-    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+  
   }
   
   header {
@@ -16,12 +19,14 @@ body {
   
   header h1 {
     margin: 10px;
+    z-index: 3;
   }
   .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    z-index: 3;
   }
   .pill {
     font-size: 1em;
@@ -31,20 +36,23 @@ body {
     border-radius: 1em;
     border: none;
     outline: 1px solid #9D4EDD;
-    background: #00000000;
+    background: #9d4edd00;
     color: #ecf0f1;
     cursor: pointer;
+    z-index: 3;
   }
   
   .pill:not(.pill--selected):hover {
     background: rgb(16, 0, 43);
     outline: 1px solid #9D4EDD;
+    z-index: 3;
   }
   main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem;
+    z-index: 3;
   }
 
   article{
@@ -54,6 +62,7 @@ body {
     width: calc(50% - 50px);
     border-radius: 10px;
     margin: 10px;
+    z-index: 3;
 
   }
   
@@ -64,6 +73,12 @@ body {
   .left {
     animation: slide-in-right 1.25s ease-out;
   }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+  
   
   @keyframes slide-in-left {
     from {
@@ -83,19 +98,46 @@ body {
     }
   }
   
-  footer {
-    color: #C77DFF;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
+  
+
+
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
   }
 
-
-  #blob{
+  #blob {
     background-color: white;
-    height: 500px;
+    height: 20vmax;
     aspect-ratio: 1;
-    position: absolute;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right,#7B2CBF,#E0AAFF);
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+    z-index: 1;
+    overflow: hidden;
   }
+
+  #blur{
+    height: 110%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+  }
+
+
