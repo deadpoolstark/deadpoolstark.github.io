@@ -17,6 +17,12 @@ body {
   header h1 {
     margin: 10px;
   }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
   .pill {
     font-size: 1em;
     font-family: "Readex Pro", sans-serif;
@@ -24,14 +30,15 @@ body {
     margin: 1em;
     border-radius: 1em;
     border: none;
-    outline: none;
-    background: #9D4EDD;
+    outline: 1px solid #9D4EDD;
+    background: #9d4edd00;
     color: #ecf0f1;
     cursor: pointer;
   }
   
   .pill:not(.pill--selected):hover {
-    background: #E0AAFF;
+    background: rgb(16, 0, 43);
+    outline: 1px solid #9D4EDD;
   }
   main {
     display: flex;
@@ -83,4 +90,12 @@ body {
     padding: 1rem;
     text-align: center;
     border-radius: 0 0 10px 10px;
+  }
+
+
+  #blob{
+    background-color: white;
+    height: 500px;
+    aspect-ratio: 1;
+    position: absolute;
   }
