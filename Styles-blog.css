@@ -1,6 +1,6 @@
 body {
     font-family: 'Space Mono', monospace;;
-    background-color: #2c3e50;
+    background:linear-gradient(to bottom right,rgb(16, 0, 43) 10%,rgb(60, 9, 108),rgb(157, 78, 221));
     color: #ecf0f1 ;
     margin: 0;
     padding: 0;
@@ -25,22 +25,14 @@ body {
     border-radius: 1em;
     border: none;
     outline: none;
-    background: #7f8c8d;
+    background: #9D4EDD;
     color: #ecf0f1;
     cursor: pointer;
   }
   
   .pill:not(.pill--selected):hover {
-    background: #cccccc;
+    background: #E0AAFF;
   }
-  
-  .pill--selected {
-    background: #009578;
-    color: #ffffff;
-  }
-  
- 
-  
   main {
     display: flex;
     flex-wrap: wrap;
@@ -49,10 +41,10 @@ body {
   }
 
   article{
-    background-color: #7f8c8d;
-    border: 1px solid #34495e;
+    background-color: #9d4edd00;
+    border: 1px solid #34495e00;
     padding: 10px;
-    width: calc(100% - 10px);
+    width: calc(50% - 50px);
     border-radius: 10px;
     margin: 10px;
 
@@ -92,4 +84,3 @@ body {
     text-align: center;
     border-radius: 0 0 10px 10px;
   }
-  
