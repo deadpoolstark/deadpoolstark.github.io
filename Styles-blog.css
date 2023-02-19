@@ -133,7 +133,7 @@ body {
   }
 
   #blur{
-    height: 110%;
+    height: 150%;
     width: 100%;
     position: absolute;
     z-index: 2;
