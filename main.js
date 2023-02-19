@@ -1,3 +1,4 @@
+console.log("works?")
 document.addEventListener('DOMContentLoaded', () => {
   const blob = document.getElementById('blob');
   console.log(blob);
