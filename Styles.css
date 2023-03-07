@@ -29,6 +29,9 @@
       .card-3 {
         animation-delay: 2s;
       }
+      .card-4{
+        animation-delay:2.5s ;
+      }
       .card-0{
         text-align: center;
       }
@@ -96,15 +99,15 @@
       }
       @keyframes slide-in {
         0% {
-          transform: translateX(-100%) scale(1);
+          transform: translateY(-100%) scale(1);
         }
         60% {
-          transform: translateX(0) scale(1.05);
+          transform: translateY(0) scale(1.05);
         }
         80% {
-          transform: translateX(0) scale(1);
+          transform: translateY(0) scale(1);
         }
         100% {
-          transform: translateX(0) scale(1);
+          transform: translateY(0) scale(1);
         }
       }     
