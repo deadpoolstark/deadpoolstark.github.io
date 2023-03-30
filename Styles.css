@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
     body {
-      background-color: #272727;
-      color:#14A76c ;
+      background: linear-gradient(to top,#222831,#393E46);
+      color:#00ADB5 ;
       font-family: 'Space Mono', monospace;
       overflow:scroll;
     }
@@ -13,7 +13,7 @@
       margin: 0 auto;
     }
     .card {
-      background-color: #030701;
+      background-color: #222831;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;      
@@ -52,8 +52,8 @@
 
         .menu a {
         text-decoration: none;
-        color: #14A76c;
-        background-color: #030701;
+        color: #00ADB5;
+        background-color: #222831;
         padding: 10px;
         border-radius: 5px;
         display: block;
@@ -84,9 +84,9 @@
         border-radius: 1em;
         border: none;
         outline: none;
-        background: #030701;
+        background: #222831;
         cursor: pointer;
-        color: #14A76c;
+        color: #00ADB5;
       }
       
       .pill:not(.pill--selected):hover {
@@ -94,7 +94,7 @@
       }
       
       .pill--selected {
-        background: #009578;
+        background: #00ADB5;
         color: #ffffff;
       }
       @keyframes slide-in {
