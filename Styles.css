@@ -21,20 +21,23 @@
       transform: translateX(-150%);
       }
       .card-1 {
-        animation-delay: 1s;
+        animation-delay: 0.5s;
       }
       .card-2 {
-        animation-delay: 1.5s;
+        animation-delay: 1s;
       }
       .card-3 {
-        animation-delay: 2s;
+        animation-delay: 1.5s;
       }
       .card-4{
-        animation-delay:2.5s ;
+        animation-delay:2s ;
       }
       .card-0{
         text-align: center;
-      }
+      } 
+	.card:hover{
+	 box-shadow: 0 0 20px 20px #00ADB5;
+	}
       .menu ul {
         list-style-type: none;
         padding: 0;
@@ -46,6 +49,7 @@
         .menu li {
         padding: 10px;
         margin: 10px;
+	
         
         }
 
@@ -61,6 +65,7 @@
 
         .menu a:hover {
         background-color: #666;
+ 	box-shadow: 0 0 20px 10px #00ADB5;
         }
        
        
