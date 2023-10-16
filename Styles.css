@@ -96,6 +96,9 @@
       .pill:not(.pill--selected):hover {
         background: #666;
       }
+	audio{
+		margin-top:15px;
+	}
       
       .pill--selected {
         background: #00ADB5;
