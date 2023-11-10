@@ -39,13 +39,15 @@
     </style>
     <script>
         function openWhatsApp() {
+            var countrycode = document.getElementById('countryCode').value;
             var phoneNumber = document.getElementById('phoneNumber').value;
-            window.location.href = "https://wa.me/91" + phoneNumber;
+            window.location.href = "https://wa.me/" + countrycode + phoneNumber;
         }
     </script>
 </head>
 <body>
     <div class="container">
+        <input type="number" id="countryCode" placeholder="Enter country code">
         <input type="number" id="phoneNumber" placeholder="Enter phone number">
         <button onclick="openWhatsApp()">Open WhatsApp</button>
     </div>
