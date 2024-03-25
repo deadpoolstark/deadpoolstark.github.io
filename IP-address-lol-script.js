@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             context.fillStyle = '#000';
             
             // Draw the IP text
-            context.fillText(`Gotcha Bitch: ${ip}`, 10, 30);
+            context.fillText(`Your IP Address: ${ip}`, 10, 30);
             
             // Convert the canvas to a data URL and set it as the image source
             imgElement.src = canvas.toDataURL();
