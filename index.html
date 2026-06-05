@@ -1,56 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Main page</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet"  href="Styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vayush Vasireddy - Full-Stack Developer & Python Enthusiast. Retro OS Style Portfolio.">
+    <meta name="keywords" content="Vayush Vasireddy, Portfolio, Full-Stack Developer, Python, Retro OS, Cyberpunk">
+    <meta property="og:title" content="Vayush Vasireddy | Retro Portfolio">
+    <meta property="og:description" content="A premium retro OS-styled portfolio showcasing projects and experience.">
+    <meta property="og:type" content="website">
+    <title>Vayush Vasireddy | Retro Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<!--html-->
 <body>
-  <script src="main.js" defer></script>
-  <div class="menu">
-    <ul>
-      <li><a href="https://www.youtube.com/channel/UCoxwxeNQWc5x1Z5RraGch6A">Youtube</a></li>
-      <li><a href="mailto:vasireddyvayush2004@gmail.com">Email</a></li>
-      <li><a href="https://github.com/deadpoolstark">Github</a></li>
-      <li><a href="Blog site.html">Blog</a></li>
-      <li><a href="Shop.html">Shop</a></li>
-    </ul>
-  </div>
-  <hr>
-  <div class="container">
-  <div class="card card-0">
-  <h1><img src="Screenshot 2023-01-22 at 03-01-06 DALL·E.png" alt="logo">Vayush Vasireddy Portifolio</h1>
-  </div>
-    <div class="card card-1">
-      <h2>About Me</h2>
-      <p>Hi, my name is Vayush Vasireddy and I am a Computer science student in RMKCET.</p>
+    <div id="boot-screen" class="boot-screen">
+        <div class="boot-text">
+            <p>VAYUSH_OS BIOS (C) 2026 Vayush Systems Inc.</p>
+            <p>Main Processor: Neural Network Processor v9.4</p>
+            <p>Memory Testing: 65536K OK</p>
+            <br>
+            <p id="boot-status">Detecting primary master... OK</p>
+            <p id="boot-cursor" class="blink">_</p>
+        </div>
     </div>
-    <div class="card card-2">
-      <h2>Education</h2>
-      <ul>
-        <li>Jubilee Hills Public School-CBSE 10th:80%</li>
-        <li>Sri Chaitanya,SR nagar-TS Board intermediate:76%</li>
-        <li>JEE:76%</li>
-        <li>RMK College of Engineering and Technology-Bachelors in Computer Science and Engineering:N/A</li>
-      </ul>
-    </div>
-    <div class="card card-3">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Karate Gold Medalist</li>
-        <li>Top <s>11%</s> 10% in Try Hack Me</li>
-        <li>Made my first project! so cool! <b>😎</b></li>
-        <li>Owner of a medium-sized regional community</li>
-      </ul>
-      </div>
-      <div class="card card-4"> 
-        <H2>My Fav songs</H2>
-        <ul>
-           <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7FGBQKAbPeOXkl6n4Bt00O?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </ul>
-          </div>
-  </div>
-  <footer>©copyright vasireddy-2022</footer>
+
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+    
+    <nav class="menu-bar">
+        <div class="menu-left">
+            <div class="dropdown">
+                <span class="logo dropdown-btn">V</span>
+                <div class="dropdown-content">
+                    <a href="#" id="menu-about">About Vayush OS</a>
+                    <hr>
+                    <a href="Vayush_Resume_best.pdf" target="_blank">Download PDF Resume</a>
+                    <a href="https://github.com/deadpoolstark" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/vayush-vasireddy" target="_blank">LinkedIn</a>
+                    <hr>
+                    <a href="#" id="menu-shutdown">Shut Down...</a>
+                </div>
+            </div>
+            <span>File</span>
+            <span>Edit</span>
+            <span>View</span>
+            <span>Special</span>
+        </div>
+        <div class="menu-right" id="clock">10:00 AM</div>
+    </nav>
+
+    <main class="desktop">
+        <div class="icon-container">
+            <div class="desktop-icon" data-target="about">
+                <div class="folder-icon">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                </div>
+                <span>About</span>
+            </div>
+            <div class="desktop-icon" data-target="education">
+                <div class="folder-icon">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                </div>
+                <span>Education</span>
+            </div>
+            <div class="desktop-icon" data-target="experience">
+                <div class="folder-icon">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                </div>
+                <span>Experience</span>
+            </div>
+            <div class="desktop-icon" data-target="projects">
+                <div class="folder-icon">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                </div>
+                <span>Projects</span>
+            </div>
+            <div class="desktop-icon" data-target="skills">
+                <div class="folder-icon">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body"></div>
+                </div>
+                <span>Tech Skills</span>
+            </div>
+        </div>
+
+        <!-- Windows are created dynamically by script.js -->
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
