@@ -45,7 +45,7 @@ var resumeData = {
         '</ul>',
 
     projects: '<h2>Projects</h2>' +
-        '<h3>Self-Hosted POS System</h3>' +
+        '<h3>Self-Hosted POS System <a href="https://github.com/deadpoolstark/Open-Source-Pos-System" target="_blank">[GitHub]</a></h3>' +
         '<div class="job-meta">Python, Firebase, NPM</div>' +
         '<ul>' +
         '<li>Developed an open-source, self-hosted POS system designed for small cafes.</li>' +
@@ -59,7 +59,7 @@ var resumeData = {
         '<li>Handled CSRF tokens, session management, and multipart PDF downloads with async job tracking.</li>' +
         '<li>Designed a unified single-file pipeline architecture with dry-run toggles and Excel/JSON local output.</li>' +
         '</ul>' +
-        '<h3>YouTube Stats Scraper</h3>' +
+        '<h3>YouTube Stats Scraper <a href="https://github.com/deadpoolstark/Youtube-Analytics-Downloader" target="_blank">[GitHub]</a></h3>' +
         '<div class="job-meta">Python, Flask, Google Cloud, HTML, CSS</div>' +
         '<ul>' +
         '<li>Built a Flask web app that pulls channel and video analytics via the YouTube Data API v3.</li>' +
