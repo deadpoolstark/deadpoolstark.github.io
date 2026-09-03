@@ -1,327 +1,372 @@
-var resumeData = {
-    about: '<h2>Vayush Vasireddy</h2>' +
-        '<p>Email: <a href="mailto:vasireddyvayush2004@gmail.com">vasireddyvayush2004@gmail.com</a></p>' +
-        '<p>LinkedIn: <a href="https://linkedin.com/in/vayush-vasireddy" target="_blank">linkedin.com/in/vayush-vasireddy</a></p>' +
-        '<p>GitHub: <a href="https://github.com/deadpoolstark" target="_blank">github.com/deadpoolstark</a></p>' +
-        '<br>' +
-        '<p>I am a passionate developer with experience in full-stack web development, Python automation, and creating robust backend systems.</p>',
+/* 
+   Linear Coffee Design System - GSAP Advanced Motion Script
+   Following gpt-taste skill directive & Linear design guidance
+*/
 
-    education: '<h2>Education</h2>' +
-        '<h3>RMK College of Engineering and Technology, Tamil Nadu</h3>' +
-        '<div class="job-meta">Bachelor of Engineering in Computer Science | Aug 2021 – Jul 2026</div>' +
-        '<h3>Sri Chaitanya, Hyderabad, Telangana</h3>' +
-        '<div class="job-meta">Senior Secondary Education: Mathematics, Physics, Chemistry | Aug 2019 – Jul 2021</div>' +
-        '<h3>Jubilee Hills Public School</h3>' +
-        '<div class="job-meta">Primary and Secondary Education | May 2019</div>' +
-        '<h3>Certifications</h3>' +
-        '<ul><li>CompTIA Security+ Certification (In Progress)</li></ul>',
+document.addEventListener('DOMContentLoaded', () => {
+  setupCodeTabs();
+  setupCopyEmail();
+  setupMobileNav();
+  setupDockScrollTracking();
 
-    experience: '<h2>Experience</h2>' +
-        '<h3>Lead Developer Intern | projectkaapi.com</h3>' +
-        '<div class="job-meta">Hyderabad, Telangana | Jan 2025 – Present</div>' +
-        '<ul>' +
-        '<li>Built and fully customized a responsive Shopify storefront for a specialty coffee brand.</li>' +
-        '<li>Developed and deployed a custom POS system for a small cafe inside IIIT Hyderabad.</li>' +
-        '<li>Authored UI components using Liquid, HTML/CSS, and JavaScript; configured Shopify apps for subscriptions and faceted product filtering.</li>' +
-        '</ul>' +
-        '<h3>Web Developer | NeighbourhoodMinds.in</h3>' +
-        '<div class="job-meta">Hyderabad, Telangana | Jun 2025 – Jul 2025</div>' +
-        '<ul>' +
-        '<li>Contributed to a mental health awareness platform built in Framer.</li>' +
-        '<li>Resolved responsiveness issues across device breakpoints and improved page load performance.</li>' +
-        '<li>Collaborated on UI/UX enhancements; shipped design improvements in a tight two-month engagement.</li>' +
-        '</ul>' +
-        '<h3>Python Junior Developer | FirstPay eCommerce</h3>' +
-        '<div class="job-meta">Hyderabad, Telangana | Oct 2023 – Jun 2025</div>' +
-        '<ul>' +
-        '<li>Built and maintained internal Python tooling and backend features for a fintech/eCommerce product over a ~20-month tenure.</li>' +
-        '<li>Debugged recurring application issues with cross-team collaboration; improved system stability through targeted fixes.</li>' +
-        '<li>Applied foundational security practices and participated actively in code reviews.</li>' +
-        '</ul>' +
-        '<h3>Social Media Intern | Express, Don\'t Suppress</h3>' +
-        '<div class="job-meta">Remote | May 2021 – Jul 2021</div>' +
-        '<ul>' +
-        '<li>Managed multi-platform content and tracked campaign engagement; coordinated with influencers on promotional campaigns.</li>' +
-        '</ul>',
+  // Initialize GSAP Motion & ScrollTrigger animations once GSAP loads
+  if (typeof gsap !== 'undefined') {
+    initGsapAnimations();
+  } else {
+    window.addEventListener('load', () => {
+      if (typeof gsap !== 'undefined') initGsapAnimations();
+    });
+  }
+});
 
-    projects: '<h2>Projects</h2>' +
-        '<h3>Self-Hosted POS System <a href="https://github.com/deadpoolstark/Open-Source-Pos-System" target="_blank">[GitHub]</a></h3>' +
-        '<div class="job-meta">Python, Firebase, NPM</div>' +
-        '<ul>' +
-        '<li>Developed an open-source, self-hosted POS system designed for small cafes.</li>' +
-        '<li>Built inventory tracking and billing workflows on top of Firebase for real-time sync across devices.</li>' +
-        '<li>Packaged and distributed via NPM for easy self-deployment.</li>' +
-        '</ul>' +
-        '<h3>Court Data Scraper Pipelines</h3>' +
-        '<div class="job-meta">Python, BeautifulSoup, Requests, OpenPyXL</div>' +
-        '<ul>' +
-        '<li>Built automated scraper pipelines for 4 Indian tribunals (CESTAT, NGT, NCLT, NCLAT) to extract daily cause list data.</li>' +
-        '<li>Handled CSRF tokens, session management, and multipart PDF downloads with async job tracking.</li>' +
-        '<li>Designed a unified single-file pipeline architecture with dry-run toggles and Excel/JSON local output.</li>' +
-        '</ul>' +
-        '<h3>YouTube Stats Scraper <a href="https://github.com/deadpoolstark/Youtube-Analytics-Downloader" target="_blank">[GitHub]</a></h3>' +
-        '<div class="job-meta">Python, Flask, Google Cloud, HTML, CSS</div>' +
-        '<ul>' +
-        '<li>Built a Flask web app that pulls channel and video analytics via the YouTube Data API v3.</li>' +
-        '<li>Integrated Google Cloud services for API key management, quota handling, and app deployment.</li>' +
-        '<li>Structured the backend to handle paginated API responses and aggregate metrics across multiple videos/channels.</li>' +
-        '</ul>',
+  // Safety fallback: Hide preloader after 3 seconds if animation is delayed
+  setTimeout(() => {
+    const overlay = document.getElementById('introOverlay');
+    const targetLogo = document.querySelector('.brand-logo-img');
+    const brandName = document.querySelector('.brand-mark span');
+    if (overlay && overlay.style.display !== 'none') {
+      overlay.style.transition = 'opacity 0.4s ease';
+      overlay.style.opacity = '0';
+      if (targetLogo) targetLogo.style.opacity = '1';
+      if (brandName) brandName.style.opacity = '1';
+      setTimeout(() => { overlay.style.display = 'none'; }, 450);
+    }
+  }, 3000);
+const codeSnippets = {
+  fintech: `
+<span class="code-comment"># FirstPay eCommerce - Core Automation & Vulnerability Hardening</span>
+<span class="code-keyword">import</span> asyncio
+<span class="code-keyword">from</span> security <span class="code-keyword">import</span> role_required, audit_logger
 
-    skills: '<h2>Technical Skills</h2>' +
-        '<ul>' +
-        '<li><strong>Languages:</strong> JavaScript, Python, SQL, HTML/CSS</li>' +
-        '<li><strong>Frameworks:</strong> Flask</li>' +
-        '<li><strong>Developer Tools:</strong> Git, Docker, Google Cloud Platform, VS Code, Angry IP Scanner</li>' +
-        '<li><strong>Libraries:</strong> Pandas, NumPy, Matplotlib</li>' +
-        '</ul>'
+<span class="code-keyword">class</span> <span class="code-fn">FintechBackendService</span>:
+    <span class="code-keyword">def</span> <span class="code-fn">__init__</span>(self, db_session, encryption_key):
+        self.db = db_session
+        self.key = encryption_key
+
+    <span class="code-keyword">@role_required</span>(<span class="code-string">"ADMIN_FINANCE"</span>)
+    <span class="code-keyword">async def</span> <span class="code-fn">sync_high_volume_transactions</span>(self, batch_payload):
+        <span class="code-comment">"""Process batch sync with sub-millisecond API runtime optimization."""</span>
+        audit_logger.info(<span class="code-string">"Batch payload received, hardening RBAC checks"</span>)
+        verified_batch = [item <span class="code-keyword">for</span> item <span class="code-keyword">in</span> batch_payload <span class="code-keyword">if</span> item.is_valid()]
+        
+        <span class="code-keyword">return await</span> self.db.bulk_insert_async(verified_batch)
+`.trim(),
+
+  court_scraper: `
+<span class="code-comment"># Court Data Scraper Pipelines (CESTAT, NGT, NCLT, NCLAT)</span>
+<span class="code-keyword">import</span> requests
+<span class="code-keyword">from</span> bs4 <span class="code-keyword">import</span> BeautifulSoup
+
+<span class="code-keyword">async def</span> <span class="code-fn">fetch_tribunal_listings</span>(tribunal_code, session_token):
+    headers = {
+        <span class="code-string">"X-CSRF-Token"</span>: session_token,
+        <span class="code-string">"User-Agent"</span>: <span class="code-string">"CourtDataParser/2.4 (Automated ETL)"</span>
+    }
+    <span class="code-comment"># Dynamic handshake & async POST payload ingest</span>
+    response = <span class="code-keyword">await</span> requests.post_async(f<span class="code-string">"https://tribunal.gov.in/{tribunal_code}/api"</span>, headers=headers)
+    parsed_pdf = parse_multipart_pdf_buffer(response.content)
+    <span class="code-keyword">return</span> parsed_pdf.extract_case_rows()
+`.trim(),
+
+  security_audit: `
+<span class="code-comment"># Nmap Reconnaissance & Vulnerability Discovery Log</span>
+$ nmap -sV -sC -p 1-65535 192.168.1.104 -oN college_audit.log
+
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Apache/2.4.41 (Internal Confidential Archive)
+443/tcp  open  ssl/http OpenSSL 1.1.1f
+8080/tcp open  http-proxy Tomcat/9.0.31 [VULNERABLE: AUTH BYPASS DISCOVERED]
+
+<span class="code-comment">[ALERT] Unauthenticated endpoint /api/admin/docs exposed without JWT checks</span>
+<span class="code-comment">[ACTION] Authored formal mitigation report: Firewall rules + Local IDS deployment</span>
+`.trim(),
+
+  shopify_pos: `
+<span class="code-comment">// ProjectKaapi & IIIT Hyderabad Cafe POS Inventory Sync</span>
+<span class="code-keyword">async function</span> <span class="code-fn">syncCafePosBilling</span>(orderId, items) {
+  <span class="code-keyword">const</span> payload = {
+    storefront: <span class="code-string">"projectkaapi.com"</span>,
+    location: <span class="code-string">"IIIT_HYD_CAFE"</span>,
+    timestamp: Date.now(),
+    lineItems: items
+  };
+
+  <span class="code-keyword">const</span> res = <span class="code-keyword">await</span> fetch(<span class="code-string">"/api/pos/v1/checkout"</span>, {
+    method: <span class="code-string">"POST"</span>,
+    headers: { <span class="code-string">"Content-Type"</span>: <span class="code-string">"application/json"</span> },
+    body: JSON.stringify(payload)
+  });
+  <span class="code-keyword">return</span> res.json();
+}
+`.trim()
 };
 
-// --- Global window state ---
-var openWindows = {};   // target -> window DOM element
-var topZ = 100;         // global z-index counter
-var windowOffset = 0;   // stagger offset so windows don't stack exactly
+function setupCodeTabs() {
+  const tabs = document.querySelectorAll('.frame-tab');
+  const codeDisplay = document.getElementById('codeDisplay');
+  const filenameDisplay = document.getElementById('activeFilename');
 
-document.addEventListener('DOMContentLoaded', function () {
+  if (!codeDisplay) return;
 
-    // --- Boot Sequence ---
-    var bootScreen = document.getElementById('boot-screen');
-    var bootStatus = document.getElementById('boot-status');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
 
-    function runBoot() {
-        bootScreen.style.transition = 'opacity 0.6s ease';
-        setTimeout(function () { bootStatus.textContent = 'Loading kernel modules... OK'; }, 900);
-        setTimeout(function () { bootStatus.textContent = 'Mounting file systems... OK'; }, 1600);
-        setTimeout(function () { bootStatus.textContent = 'Starting GUI server... OK'; }, 2300);
-        setTimeout(function () {
-            bootScreen.style.opacity = '0';
-            setTimeout(function () {
-                bootScreen.style.display = 'none';
-                sessionStorage.setItem('hasBooted', 'true');
-                initOS();
-            }, 700);
-        }, 3200);
-    }
+      const snippetKey = tab.getAttribute('data-snippet');
+      const filename = tab.getAttribute('data-filename');
 
-    if (!sessionStorage.getItem('hasBooted')) {
-        runBoot();
-    } else {
-        bootScreen.style.display = 'none';
-        initOS();
-    }
-
-    // ----------------------------------------------------------------
-    function initOS() {
-
-        // Clock
-        function updateClock() {
-            var now = new Date();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById('clock').textContent = hours + ':' + minutes + ' ' + ampm;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // --- Start Menu Dropdown ---
-        var dropdownBtn = document.querySelector('.dropdown-btn');
-        var dropdown = document.querySelector('.dropdown');
-
-        dropdownBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            dropdown.classList.toggle('show');
-        });
-        document.addEventListener('click', function () {
-            dropdown.classList.remove('show');
-        });
-        document.getElementById('menu-about').addEventListener('click', function (e) {
-            e.preventDefault();
-            dropdown.classList.remove('show');
-            openWindow('about');
-        });
-        document.getElementById('menu-shutdown').addEventListener('click', function (e) {
-            e.preventDefault();
-            document.body.innerHTML = '<div style="background:#000;color:red;font-family:monospace;font-size:28px;padding:60px;text-align:center;text-shadow:0 0 10px red;height:100vh;display:flex;align-items:center;justify-content:center;">It is now safe to turn off your computer.</div>';
-        });
-
-        // --- Desktop Icon Clicks ---
-        var icons = document.querySelectorAll('.desktop-icon');
-        icons.forEach(function (icon) {
-            icon.addEventListener('click', function () {
-                openWindow(icon.dataset.target);
-            });
-        });
-
-        // Open About by default
-        setTimeout(function () {
-            openWindow('about');
-        }, 300);
-    }
-
-    // ----------------------------------------------------------------
-    // Multi-window system
-    // ----------------------------------------------------------------
-    function bringToFront(winEl) {
-        topZ++;
-        winEl.style.zIndex = topZ;
-    }
-
-    function makeWindow(target) {
-        var label = target.charAt(0).toUpperCase() + target.slice(1).replace('-', ' ');
-
-        // Calculate staggered starting position
-        var startX = Math.min(60 + windowOffset * 28, window.innerWidth - 670);
-        var startY = Math.min(50 + windowOffset * 28, window.innerHeight - 540);
-        windowOffset = (windowOffset + 1) % 8;
-
-        // Build the window element
-        var win = document.createElement('div');
-        win.className = 'window';
-        win.style.left = startX + 'px';
-        win.style.top = startY + 'px';
-        win.style.opacity = '0';
-        win.style.transform = 'scale(0.95)';
-        win.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
-
-        win.innerHTML =
-            '<div class="window-header">' +
-                '<button class="close-btn window-btn" title="Close"></button>' +
-                '<div class="title-stripes"></div>' +
-                '<span class="window-title">' + label + '</span>' +
-                '<div class="title-stripes"></div>' +
-                '<button class="min-btn window-btn" title="Minimize"></button>' +
-                '<button class="max-btn window-btn" title="Maximize"></button>' +
-            '</div>' +
-            '<div class="window-content-wrapper">' +
-                '<div class="window-content">' +
-                    (resumeData[target] || '<p>No content.</p>') +
-                '</div>' +
-            '</div>';
-
-        document.querySelector('.desktop').appendChild(win);
-
-        // Animate in
-        requestAnimationFrame(function () {
-            win.style.opacity = '1';
-            win.style.transform = 'scale(1)';
-        });
-
-        bringToFront(win);
-
-        // GSAP entry animation on content items
-        if (typeof gsap !== 'undefined') {
-            var items = win.querySelectorAll('p, li, h3');
-            gsap.fromTo(items,
-                { opacity: 0, y: 10 },
-                { opacity: 1, y: 0, duration: 0.25, stagger: 0.04, ease: 'power2.out', delay: 0.15 }
-            );
-        }
-
-        // Click anywhere on window -> bring to front
-        win.addEventListener('mousedown', function () {
-            bringToFront(win);
-        });
-
-        // --- Dragging ---
-        var header = win.querySelector('.window-header');
-        var closeBtn = win.querySelector('.close-btn');
-        var minBtn = win.querySelector('.min-btn');
-        var maxBtn = win.querySelector('.max-btn');
-        var isDragging = false;
-        var dragOffsetX, dragOffsetY;
-        var savedPos = null; // for maximize/restore
-
-        header.addEventListener('mousedown', function (e) {
-            if (e.target === closeBtn || e.target === minBtn || e.target === maxBtn) return;
-            if (win.classList.contains('maximized')) return;
-            isDragging = true;
-            dragOffsetX = e.clientX - win.getBoundingClientRect().left;
-            dragOffsetY = e.clientY - win.getBoundingClientRect().top;
-        });
-
-        document.addEventListener('mousemove', function (e) {
-            if (!isDragging) return;
-            var newX = e.clientX - dragOffsetX;
-            var newY = e.clientY - dragOffsetY;
-            newX = Math.max(0, Math.min(newX, window.innerWidth - win.offsetWidth));
-            newY = Math.max(30, Math.min(newY, window.innerHeight - win.offsetHeight));
-            win.style.left = newX + 'px';
-            win.style.top = newY + 'px';
-        });
-
-        document.addEventListener('mouseup', function () {
-            isDragging = false;
-        });
-
-        // Close
-        closeBtn.addEventListener('click', function () {
-            win.style.opacity = '0';
-            win.style.transform = 'scale(0.93)';
-            setTimeout(function () {
-                win.remove();
-                delete openWindows[target];
-                // deselect icon
-                var icon = document.querySelector('.desktop-icon[data-target="' + target + '"]');
-                if (icon) icon.classList.remove('selected');
-            }, 200);
-        });
-
-        // Minimize (hide the window but keep state)
-        minBtn.addEventListener('click', function () {
-            win.style.opacity = '0';
-            win.style.pointerEvents = 'none';
-            win.dataset.minimized = 'true';
-            var icon = document.querySelector('.desktop-icon[data-target="' + target + '"]');
-            if (icon) icon.classList.remove('selected');
-        });
-
-        // Maximize / Restore
-        maxBtn.addEventListener('click', function () {
-            if (win.classList.contains('maximized')) {
-                win.classList.remove('maximized');
-                if (savedPos) {
-                    win.style.left = savedPos.left;
-                    win.style.top = savedPos.top;
-                    win.style.width = savedPos.width;
-                    win.style.height = savedPos.height;
-                }
-            } else {
-                savedPos = {
-                    left: win.style.left,
-                    top: win.style.top,
-                    width: win.style.width,
-                    height: win.style.height
-                };
-                win.classList.add('maximized');
+      // GSAP smooth transition for code content
+      if (typeof gsap !== 'undefined') {
+        gsap.to(codeDisplay, {
+          opacity: 0,
+          y: -4,
+          duration: 0.15,
+          onComplete: () => {
+            if (codeSnippets[snippetKey]) {
+              codeDisplay.innerHTML = codeSnippets[snippetKey];
             }
-        });
-
-        return win;
-    }
-
-    function openWindow(target) {
-        // Mark icon as selected
-        document.querySelectorAll('.desktop-icon').forEach(function (i) {
-            if (i.dataset.target === target) {
-                i.classList.add('selected');
+            if (filenameDisplay && filename) {
+              filenameDisplay.textContent = filename;
             }
+            gsap.to(codeDisplay, { opacity: 1, y: 0, duration: 0.25, ease: 'power2.out' });
+          }
         });
+      } else {
+        if (codeSnippets[snippetKey]) codeDisplay.innerHTML = codeSnippets[snippetKey];
+        if (filenameDisplay && filename) filenameDisplay.textContent = filename;
+      }
+    });
+  });
+}
 
-        // If window already open, bring to front (or un-minimize)
-        if (openWindows[target]) {
-            var existing = openWindows[target];
-            if (existing.dataset.minimized === 'true') {
-                existing.style.opacity = '1';
-                existing.style.pointerEvents = '';
-                existing.dataset.minimized = 'false';
-            }
-            bringToFront(existing);
-            return;
+function setupCopyEmail() {
+  const copyBtns = document.querySelectorAll('[data-copy-email]');
+  const emailText = 'vasireddyvayush2004@gmail.com';
+
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText(emailText).then(() => {
+        showToast('Email copied: vasireddyvayush2004@gmail.com');
+      }).catch(() => {
+        showToast('Failed to copy email');
+      });
+    });
+  });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+
+  const toastMessage = toast.querySelector('.toast-msg') || toast;
+  toastMessage.textContent = msg;
+
+  if (typeof gsap !== 'undefined') {
+    gsap.killTweensOf(toast);
+    gsap.fromTo(toast, 
+      { y: 80, opacity: 0 }, 
+      { y: 0, opacity: 1, duration: 0.35, ease: 'back.out(1.7)' }
+    );
+    setTimeout(() => {
+      gsap.to(toast, { y: 60, opacity: 0, duration: 0.3, ease: 'power2.in' });
+    }, 3200);
+  } else {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+  }
+}
+
+function setupMobileNav() {
+  const toggleBtn = document.getElementById('mobileMenuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('mobile-open');
+    });
+  }
+}
+
+/* Scroll Active Tracking for Bottom Glass Floating Dock */
+function setupDockScrollTracking() {
+  const dockItems = document.querySelectorAll('.bottom-floating-dock .dock-item[data-section]');
+  const sections = document.querySelectorAll('section[id]');
+
+  if (!dockItems.length || !sections.length) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -50% 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        dockItems.forEach(item => {
+          if (item.getAttribute('data-section') === id) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+/* GSAP Advanced Motion Engineering */
+function initGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // 1. Preloader Intro Animated Logo Morph Sequence
+  const introOverlay = document.getElementById('introOverlay');
+  const introLogo = document.getElementById('introLogo');
+  const targetLogo = document.querySelector('.brand-logo-img');
+  const brandName = document.querySelector('.brand-mark span');
+
+  let introTimeline = gsap.timeline();
+
+  if (introOverlay && introLogo && targetLogo) {
+    // Hide target logo initially so morph is seamless
+    gsap.set(targetLogo, { opacity: 0 });
+    if (brandName) gsap.set(brandName, { opacity: 0 });
+
+    const introRect = introLogo.getBoundingClientRect();
+    const targetRect = targetLogo.getBoundingClientRect();
+
+    const deltaX = (targetRect.left + targetRect.width / 2) - (introRect.left + introRect.width / 2);
+    const deltaY = (targetRect.top + targetRect.height / 2) - (introRect.top + introRect.height / 2);
+    const scaleRatio = targetRect.width / introRect.width;
+
+    introTimeline
+      .fromTo(introLogo,
+        { opacity: 0, scale: 1.8, filter: 'blur(12px) drop-shadow(0 0 35px rgba(169, 116, 79, 0.6))' },
+        { opacity: 1, scale: 1, filter: 'blur(0px) drop-shadow(0 0 20px rgba(169, 116, 79, 0.35))', duration: 0.75, ease: 'power3.out' }
+      )
+      .to(introLogo, {
+        x: deltaX,
+        y: deltaY,
+        scale: scaleRatio,
+        duration: 0.95,
+        ease: 'power4.inOut',
+        delay: 0.25
+      })
+      .to(introOverlay, {
+        opacity: 0,
+        duration: 0.4,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          introOverlay.style.display = 'none';
+          gsap.set(targetLogo, { opacity: 1 });
         }
+      }, '-=0.4')
+      .fromTo(brandName,
+        { opacity: 0, x: -12 },
+        { opacity: 1, x: 0, duration: 0.45, ease: 'power2.out' },
+        '-=0.25'
+      );
+  }
 
-        // Create a brand new window
-        openWindows[target] = makeWindow(target);
-    }
-});
+  // 2. Hero Stagger Entrance Sequence
+  const heroElements = document.querySelectorAll('.hero-animate');
+  if (heroElements.length) {
+    introTimeline.from(heroElements, {
+      opacity: 0,
+      y: 32,
+      duration: 0.8,
+      stagger: 0.12,
+      ease: 'power3.out'
+    }, '-=0.2');
+  }
+
+  // Hero Product Frame Scale-in
+  const heroFrame = document.querySelector('.hero-frame-animate');
+  if (heroFrame) {
+    introTimeline.from(heroFrame, {
+      opacity: 0,
+      y: 48,
+      scale: 0.95,
+      duration: 0.9,
+      ease: 'power3.out'
+    }, '-=0.6');
+  }
+
+  // Floating Dock Entrance Animation
+  const floatingDock = document.getElementById('floatingDock');
+  if (floatingDock) {
+    introTimeline.from(floatingDock, {
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'back.out(1.4)'
+    }, '-=0.7');
+  }
+
+  // 2. ScrollTrigger Section & Card Reveal Animations
+  if (typeof ScrollTrigger !== 'undefined') {
+    const cardReveals = document.querySelectorAll('.card-reveal');
+    cardReveals.forEach(card => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          toggleActions: 'play none none reverse'
+        },
+        opacity: 0,
+        y: 28,
+        duration: 0.65,
+        ease: 'power2.out'
+      });
+    });
+
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    sectionHeaders.forEach(header => {
+      gsap.from(header, {
+        scrollTrigger: {
+          trigger: header,
+          start: 'top 85%'
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        ease: 'power2.out'
+      });
+    });
+  }
+
+  // 3. Magnetic Hover Physics for Primary/Secondary CTA Buttons & Dock Items
+  const magneticElements = document.querySelectorAll('.magnetic-btn, .dock-item');
+  magneticElements.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.18;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.18;
+      gsap.to(btn, { x: x, y: y, duration: 0.25, ease: 'power2.out' });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, { x: 0, y: 0, duration: 0.4, ease: 'elastic.out(1, 0.4)' });
+    });
+  });
+
+  // 4. Subtle Card Hover Micro-scale Physics
+  const allCards = document.querySelectorAll('.experience-card, .feature-card, .skill-category-card');
+  allCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      gsap.to(card, { y: -3, duration: 0.25, ease: 'power2.out' });
+    });
+    card.addEventListener('mouseleave', () => {
+      gsap.to(card, { y: 0, duration: 0.35, ease: 'power2.out' });
+    });
+  });
+}

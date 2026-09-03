@@ -1,99 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vayush Vasireddy - Full-Stack Developer & Python Enthusiast. Retro OS Style Portfolio.">
-    <meta name="keywords" content="Vayush Vasireddy, Portfolio, Full-Stack Developer, Python, Retro OS, Cyberpunk">
-    <meta property="og:title" content="Vayush Vasireddy | Retro Portfolio">
-    <meta property="og:description" content="A premium retro OS-styled portfolio showcasing projects and experience.">
-    <meta property="og:type" content="website">
-    <title>Vayush Vasireddy | Retro Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vayush Vasireddy — Software Engineer & Backend Specialist</title>
+  <meta name="description" content="Portfolio of Vayush Vasireddy. Software Engineer specializing in Python automation, high-volume fintech backends, web infrastructure, ETL scraping pipelines, and network security audits.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger Animation Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
-<body>
-    <div id="boot-screen" class="boot-screen">
-        <div class="boot-text">
-            <p>VAYUSH_OS BIOS (C) 2026 Vayush Systems Inc.</p>
-            <p>Main Processor: Neural Network Processor v9.4</p>
-            <p>Memory Testing: 65536K OK</p>
-            <br>
-            <p id="boot-status">Detecting primary master... OK</p>
-            <p id="boot-cursor" class="blink">_</p>
-        </div>
+<body class="overflow-x-hidden">
+
+  <!-- Intro Screen Animated Overlay -->
+  <div class="intro-overlay" id="introOverlay">
+    <img src="logo.png" alt="Vayush Vasireddy Logo" id="introLogo" class="intro-logo">
+  </div>
+
+  <!-- Top Glass Navigation (Minimalist: Name & Logo Only) -->
+  <header class="top-nav">
+    <div class="container nav-container">
+      <a href="#" class="brand-mark">
+        <img src="logo.png" alt="Vayush Vasireddy Logo" class="brand-logo-img">
+        <span>Vayush Vasireddy</span>
+      </a>
     </div>
+  </header>
 
-    <div class="crt-overlay"></div>
-    <div class="scanlines"></div>
-    
-    <nav class="menu-bar">
-        <div class="menu-left">
-            <div class="dropdown">
-                <span class="logo dropdown-btn">V</span>
-                <div class="dropdown-content">
-                    <a href="#" id="menu-about">About Vayush OS</a>
-                    <hr>
-                    <a href="Vayush_Resume_best.pdf" target="_blank">Download PDF Resume</a>
-                    <a href="https://github.com/deadpoolstark" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/vayush-vasireddy" target="_blank">LinkedIn</a>
-                    <hr>
-                    <a href="#" id="menu-shutdown">Shut Down...</a>
-                </div>
-            </div>
-            <span>File</span>
-            <span>Edit</span>
-            <span>View</span>
-            <span>Special</span>
-        </div>
-        <div class="menu-right" id="clock">10:00 AM</div>
-    </nav>
+  <main style="padding-bottom: 80px;">
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge-wrap hero-animate">
+            <span class="status-badge status-badge-coffee">
+              <span class="status-badge-dot"></span>
+              CompTIA Security+ (In Progress)
+            </span>
+            <span class="status-badge">
+              Hyderabad, Telangana, India
+            </span>
+          </div>
 
-    <main class="desktop">
-        <div class="icon-container">
-            <div class="desktop-icon" data-target="about">
-                <div class="folder-icon">
-                    <div class="folder-tab"></div>
-                    <div class="folder-body"></div>
-                </div>
-                <span>About</span>
+          <h1 class="display-xl hero-title hero-animate">
+            Software Engineer &amp; Backend Specialist.
+          </h1>
+
+          <p class="subhead hero-subtitle hero-animate">
+            Engineered fintech automation at scale, built ETL scraper pipelines for legal tribunals, developed cafe POS infrastructure inside IIIT Hyderabad, and performed critical security audits.
+          </p>
+
+          <div class="hero-actions hero-animate">
+            <a href="#experience" class="btn btn-primary magnetic-btn">
+              View Experience
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#projects" class="btn btn-glass magnetic-btn">
+              Projects &amp; Audits
+            </a>
+            <button class="btn btn-glass magnetic-btn" data-copy-email>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Copy Email
+            </button>
+          </div>
+
+          <!-- Hero Quick Stats -->
+          <div class="hero-stats hero-animate">
+            <div class="stat-item">
+              <span class="stat-value">20+ Months</span>
+              <span class="stat-label">Fintech Backend &amp; Automation Tenure</span>
             </div>
-            <div class="desktop-icon" data-target="education">
-                <div class="folder-icon">
-                    <div class="folder-tab"></div>
-                    <div class="folder-body"></div>
-                </div>
-                <span>Education</span>
+            <div class="stat-item">
+              <span class="stat-value">4 Tribunals</span>
+              <span class="stat-label">Automated Legal Scraper Pipelines</span>
             </div>
-            <div class="desktop-icon" data-target="experience">
-                <div class="folder-icon">
-                    <div class="folder-tab"></div>
-                    <div class="folder-body"></div>
-                </div>
-                <span>Experience</span>
+            <div class="stat-item">
+              <span class="stat-value">Security Audit</span>
+              <span class="stat-label">Internal Auth Bypass Disclosed &amp; Remediated</span>
             </div>
-            <div class="desktop-icon" data-target="projects">
-                <div class="folder-icon">
-                    <div class="folder-tab"></div>
-                    <div class="folder-body"></div>
-                </div>
-                <span>Projects</span>
-            </div>
-            <div class="desktop-icon" data-target="skills">
-                <div class="folder-icon">
-                    <div class="folder-tab"></div>
-                    <div class="folder-body"></div>
-                </div>
-                <span>Tech Skills</span>
-            </div>
+          </div>
         </div>
 
-        <!-- Windows are created dynamically by script.js -->
-    </main>
+        <!-- Glass Featured Product Frame / Interactive Code Inspector -->
+        <div class="product-frame hero-frame-animate">
+          <div class="product-frame-header">
+            <div class="window-dots">
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-dot"></span>
+              <span class="window-title" style="margin-left: 8px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span id="activeFilename">fintech_core.py</span>
+              </span>
+            </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="script.js"></script>
+            <div class="frame-tabs">
+              <button class="frame-tab active" data-snippet="fintech" data-filename="fintech_core.py">fintech_core.py</button>
+              <button class="frame-tab" data-snippet="court_scraper" data-filename="court_etl_pipeline.py">court_etl_pipeline.py</button>
+              <button class="frame-tab" data-snippet="security_audit" data-filename="security_audit_nmap.sh">security_audit.sh</button>
+              <button class="frame-tab" data-snippet="shopify_pos" data-filename="shopify_pos_sync.js">shopify_pos_sync.js</button>
+            </div>
+          </div>
+
+          <div class="product-frame-body">
+            <pre class="code-snippet"><code id="codeDisplay"><span class="code-comment"># FirstPay eCommerce - Core Automation &amp; Vulnerability Hardening</span>
+<span class="code-keyword">import</span> asyncio
+<span class="code-keyword">from</span> security <span class="code-keyword">import</span> role_required, audit_logger
+
+<span class="code-keyword">class</span> <span class="code-fn">FintechBackendService</span>:
+    <span class="code-keyword">def</span> <span class="code-fn">__init__</span>(self, db_session, encryption_key):
+        self.db = db_session
+        self.key = encryption_key
+
+    <span class="code-keyword">@role_required</span>(<span class="code-string">"ADMIN_FINANCE"</span>)
+    <span class="code-keyword">async def</span> <span class="code-fn">sync_high_volume_transactions</span>(self, batch_payload):
+        <span class="code-comment">"""Process batch sync with sub-millisecond API runtime optimization."""</span>
+        audit_logger.info(<span class="code-string">"Batch payload received, hardening RBAC checks"</span>)
+        verified_batch = [item <span class="code-keyword">for</span> item <span class="code-keyword">in</span> batch_payload <span class="code-keyword">if</span> item.is_valid()]
+        
+        <span class="code-keyword">return await</span> self.db.bulk_insert_async(verified_batch)</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section scroll-reveal" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow section-eyebrow">Professional History</p>
+          <h2 class="display-lg section-title">Work Experience</h2>
+          <p class="body-lg">Engineering backend features, e-commerce infrastructure, and web performance optimization.</p>
+        </div>
+
+        <div class="experience-list">
+          
+          <!-- Experience Card 1: ProjectKaapi -->
+          <article class="experience-card card-reveal">
+            <div class="card-header-row">
+              <div class="company-title">
+                ProjectKaapi | KaapiRation
+                <span class="role-badge">Lead Developer Intern</span>
+              </div>
+              <div class="date-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                May 2024 – Present
+              </div>
+            </div>
+            <div class="location-meta">Hyderabad, Telangana</div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Built and deployed <strong>projectkaapi.com</strong>, a fully customized, responsive Shopify storefront for the specialty coffee brand.</li>
+              <li class="bullet-item">Developed and deployed a custom <strong>POS system</strong> for a small cafe inside IIIT Hyderabad, handling live billing and inventory synchronization.</li>
+              <li class="bullet-item">Authored UI components using Liquid, HTML/CSS, and JavaScript; configured Shopify apps for subscriptions and faceted product filtering.</li>
+            </ul>
+          </article>
+
+          <!-- Experience Card 2: FirstPay eCommerce -->
+          <article class="experience-card card-reveal">
+            <div class="card-header-row">
+              <div class="company-title">
+                FirstPay eCommerce Private Limited
+                <span class="role-badge">Python Junior Developer</span>
+              </div>
+              <div class="date-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Oct 2023 – Jun 2025
+              </div>
+            </div>
+            <div class="location-meta">Hyderabad, Telangana</div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Engineered and maintained internal Python automation tools and core backend features for a high-volume fintech platform over a 20-month tenure.</li>
+              <li class="bullet-item">Debugged recurring API layer and data synchronization bottlenecks, collaborating with cross-functional product squads to optimize overall software runtime.</li>
+              <li class="bullet-item">Hardened internal tools against vulnerabilities by embedding secure coding practices, role-based checks, and proactive unit tests during peer code reviews.</li>
+            </ul>
+          </article>
+
+          <!-- Experience Card 3: NeighbourhoodMinds.in -->
+          <article class="experience-card card-reveal">
+            <div class="card-header-row">
+              <div class="company-title">
+                NeighbourhoodMinds.in | Communite
+                <span class="role-badge">Web Developer (Contract)</span>
+              </div>
+              <div class="date-meta">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Jun 2025 – Jul 2025
+              </div>
+            </div>
+            <div class="location-meta">Hyderabad, Telangana</div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Optimized multi-device UI breakpoints and structural layouts for a major mental health platform using Framer, reducing mobile rendering delays.</li>
+              <li class="bullet-item">Diagnosed and refactored visual assets, asset delivery pipelines, and scripts to markedly improve page speed performance indexes.</li>
+              <li class="bullet-item">Translated wireframes and interface guidelines into live, production-grade web infrastructure within an agile, high-velocity two-month development cycle.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Projects & Security Audits Section -->
+    <section class="section scroll-reveal" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow section-eyebrow">Engineering &amp; Security</p>
+          <h2 class="display-lg section-title">Projects &amp; Security Audits</h2>
+          <p class="body-lg">Data scraper pipelines, cybersecurity vulnerability disclosures, and data analytics tools.</p>
+        </div>
+
+        <div class="grid-3">
+
+          <!-- Project 1: College Infrastructure Security Audit -->
+          <article class="feature-card security-card card-reveal">
+            <div class="card-top">
+              <div class="security-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div class="card-tag-row">
+                <span class="tech-tag">Nmap</span>
+                <span class="tech-tag">Network Recon</span>
+                <span class="tech-tag">Apr 2024</span>
+              </div>
+              <h3 class="project-title">College Infrastructure Security Audit</h3>
+              <p class="project-desc">
+                Discovered and disclosed an authentication bypass vulnerability on an internal college server hosting confidential records.
+              </p>
+            </div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Mapped local network topology via automated IP scans to locate and verify exposed targets.</li>
+              <li class="bullet-item">Authored formal mitigation report detailing network segmentation, firewall policies, and local IDS deployment.</li>
+            </ul>
+          </article>
+
+          <!-- Project 2: Court Data Scraper Pipelines -->
+          <article class="feature-card card-reveal">
+            <div class="card-top">
+              <div class="card-tag-row">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">BeautifulSoup</span>
+                <span class="tech-tag">Requests</span>
+                <span class="tech-tag">OpenPyXL</span>
+                <span class="tech-tag">Nov 2024</span>
+              </div>
+              <h3 class="project-title">Court Data Scraper Pipelines</h3>
+              <p class="project-desc">
+                Architected end-to-end automated ETL scraper pipelines for 4 major Indian tribunals (CESTAT, NGT, NCLT, NCLAT).
+              </p>
+            </div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Handled multi-part PDF text parsing, complex session state tokens, and dynamic CSRF handshakes.</li>
+              <li class="bullet-item">Engineered single-file pipeline architecture executing async batch POST payloads to a live case data API.</li>
+            </ul>
+          </article>
+
+          <!-- Project 3: YouTube Statistics Scraper -->
+          <article class="feature-card card-reveal">
+            <div class="card-top">
+              <div class="card-tag-row">
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">YouTube API v3</span>
+                <span class="tech-tag">GCP</span>
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">Aug 2024</span>
+              </div>
+              <h3 class="project-title">YouTube Statistics Scraper</h3>
+              <p class="project-desc">
+                Full-stack Flask data aggregation app consuming YouTube Data API v3 to map metrics into an analytics dashboard.
+              </p>
+            </div>
+            <ul class="bullet-list">
+              <li class="bullet-item">Managed Google Cloud pipelines with secure API key management and quota handling.</li>
+              <li class="bullet-item">Optimized backend data handling to parse paginated responses and calculate rolling analytics.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix -->
+    <section class="section scroll-reveal" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow section-eyebrow">Capabilities</p>
+          <h2 class="display-lg section-title">Technical Skills &amp; Stack</h2>
+          <p class="body-lg">Programming languages, backend frameworks, cloud services, security tools, and AI acceleration workflows.</p>
+        </div>
+
+        <div class="skills-section-grid">
+
+          <!-- Category 1: Languages -->
+          <div class="skill-category-card card-reveal">
+            <h3 class="category-title">
+              <svg class="category-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              Languages
+            </h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">HTML/CSS</span>
+              <span class="skill-chip">Liquid</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Frameworks & Libraries -->
+          <div class="skill-category-card card-reveal">
+            <h3 class="category-title">
+              <svg class="category-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              Frameworks &amp; Libraries
+            </h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Flask</span>
+              <span class="skill-chip">Pandas</span>
+              <span class="skill-chip">NumPy</span>
+              <span class="skill-chip">Matplotlib</span>
+              <span class="skill-chip">BeautifulSoup</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases & Cloud -->
+          <div class="skill-category-card card-reveal">
+            <h3 class="category-title">
+              <svg class="category-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              Databases &amp; Cloud
+            </h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Firebase</span>
+              <span class="skill-chip">Google Cloud Platform (GCP)</span>
+              <span class="skill-chip">SQL Databases</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Platforms -->
+          <div class="skill-category-card card-reveal">
+            <h3 class="category-title">
+              <svg class="category-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              Tools &amp; Platforms
+            </h3>
+            <div class="skill-chips">
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">VS Code</span>
+              <span class="skill-chip">Linux</span>
+              <span class="skill-chip">Shopify CLI</span>
+              <span class="skill-chip">Nmap</span>
+            </div>
+          </div>
+
+          <!-- Category 5: AI Code Acceleration -->
+          <div class="skill-category-card card-reveal">
+            <h3 class="category-title">
+              <svg class="category-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              AI Code Acceleration
+            </h3>
+            <div class="skill-chips">
+              <span class="skill-chip">GitHub Copilot</span>
+              <span class="skill-chip">Cursor</span>
+              <span class="skill-chip">LLM Refactoring</span>
+              <span class="skill-chip">AI-assisted Debugging</span>
+            </div>
+          </div>
+
+          <!-- Category 6: Certifications -->
+          <div class="skill-category-card card-reveal">
+            <h3 class="category-title">
+              <svg class="category-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              Certifications
+            </h3>
+            <div class="skill-chips">
+              <span class="skill-chip" style="border-color: var(--color-primary); color: var(--color-ink);">CompTIA Security+ (In Progress)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section scroll-reveal" id="education">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow section-eyebrow">Academic Background</p>
+          <h2 class="display-lg section-title">Education</h2>
+          <p class="body-lg">Computer science engineering and foundational education.</p>
+        </div>
+
+        <div class="grid-2">
+
+          <!-- Education 1 -->
+          <article class="experience-card card-reveal">
+            <div class="card-header-row">
+              <div class="company-title">
+                RMK College of Engineering and Technology
+              </div>
+              <div class="date-meta">
+                Aug 2021 – Jul 2026
+              </div>
+            </div>
+            <p class="body" style="color: var(--color-ink); font-weight: 500; margin-bottom: 4px;">
+              Bachelor of Engineering in Computer Science
+            </p>
+            <p class="body-sm">Tamil Nadu, India</p>
+          </article>
+
+          <!-- Education 2 -->
+          <article class="experience-card card-reveal">
+            <div class="card-header-row">
+              <div class="company-title">
+                Sri Chaitanya
+              </div>
+              <div class="date-meta">
+                Aug 2019 – Jul 2021
+              </div>
+            </div>
+            <p class="body" style="color: var(--color-ink); font-weight: 500; margin-bottom: 4px;">
+              Senior Secondary Education (Mathematics, Physics, Chemistry)
+            </p>
+            <p class="body-sm">Hyderabad, Telangana</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Contact Banner (Glass Featured Treatment) -->
+    <section class="section scroll-reveal" style="border-bottom: none;">
+      <div class="container">
+        <div class="cta-banner cta-pulse">
+          <div class="cta-banner-content">
+            <p class="eyebrow" style="margin-bottom: 8px;">Let's Connect</p>
+            <h2 class="display-md cta-title">Building backend tools or web platforms?</h2>
+            <p class="subhead cta-subtitle">
+              Reach out for full-time engineering roles, backend contracts, or security audit consulting.
+            </p>
+            <div class="cta-buttons">
+              <button class="btn btn-primary magnetic-btn" data-copy-email>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Copy Email Address
+              </button>
+              <a href="https://linkedin.com/in/vayush-vasireddy" target="_blank" rel="noopener" class="btn btn-glass magnetic-btn">
+                LinkedIn Profile
+              </a>
+              <a href="https://github.com/deadpoolstark" target="_blank" rel="noopener" class="btn btn-glass magnetic-btn">
+                GitHub Repositories
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Always-in-View Floating Glassmorphic Dock at Bottom -->
+  <div class="bottom-floating-dock" id="floatingDock">
+    <a href="#overview" class="dock-item active" data-section="overview">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      </span>
+      <span>Overview</span>
+    </a>
+
+    <a href="#experience" class="dock-item" data-section="experience">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+      </span>
+      <span>Experience</span>
+    </a>
+
+    <a href="#projects" class="dock-item" data-section="projects">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      </span>
+      <span>Projects</span>
+    </a>
+
+    <a href="#skills" class="dock-item" data-section="skills">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 17 22 12"></polyline></svg>
+      </span>
+      <span>Skills</span>
+    </a>
+
+    <a href="#education" class="dock-item" data-section="education">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+      </span>
+      <span>Education</span>
+    </a>
+
+    <div class="dock-separator"></div>
+
+    <a href="https://github.com/deadpoolstark" target="_blank" rel="noopener" class="dock-item dock-icon-only" aria-label="GitHub">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      </span>
+    </a>
+
+    <a href="https://linkedin.com/in/vayush-vasireddy" target="_blank" rel="noopener" class="dock-item dock-icon-only" aria-label="LinkedIn">
+      <span class="dock-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+      </span>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+          <img src="logo.png" alt="Logo" class="brand-logo-img" style="height: 20px;">
+          <span class="footer-brand">Vayush Vasireddy</span>
+        </div>
+        <p class="caption">Software Engineer • Python &amp; Web Infrastructure</p>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="https://github.com/deadpoolstark" target="_blank" rel="noopener" class="footer-link">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/vayush-vasireddy" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
+        <li><a href="mailto:vasireddyvayush2004@gmail.com" class="footer-link">vasireddyvayush2004@gmail.com</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notification" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span class="toast-msg">Copied to clipboard</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
