@@ -327,12 +327,12 @@ function initGsapAnimations() {
       gsap.from(card, {
         scrollTrigger: {
           trigger: card,
-          start: 'top 88%',
-          toggleActions: 'play none none reverse'
+          start: 'top 92%',
+          once: true
         },
         opacity: 0,
-        y: 28,
-        duration: 0.65,
+        y: 24,
+        duration: 0.6,
         ease: 'power2.out'
       });
     });
@@ -342,11 +342,12 @@ function initGsapAnimations() {
       gsap.from(header, {
         scrollTrigger: {
           trigger: header,
-          start: 'top 85%'
+          start: 'top 90%',
+          once: true
         },
         opacity: 0,
-        y: 20,
-        duration: 0.6,
+        y: 18,
+        duration: 0.55,
         ease: 'power2.out'
       });
     });
