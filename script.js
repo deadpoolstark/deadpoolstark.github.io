@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('introOverlay');
     const targetLogo = document.querySelector('.brand-logo-img');
     const brandName = document.querySelector('.brand-mark span');
+    document.body.classList.remove('no-scroll');
     if (overlay && overlay.style.display !== 'none') {
       overlay.style.transition = 'opacity 0.4s ease';
       overlay.style.opacity = '0';
@@ -237,9 +238,15 @@ function initGsapAnimations() {
   let introTimeline = gsap.timeline();
 
   if (introOverlay && introLogo && targetLogo) {
-    // Hide target logo initially so morph is seamless
+    // Lock scroll & start at top on page load for accurate FLIP coordinates
+    document.body.classList.add('no-scroll');
+    window.scrollTo(0, 0);
+
     gsap.set(targetLogo, { opacity: 0 });
     if (brandName) gsap.set(brandName, { opacity: 0 });
+
+    const isMobile = window.innerWidth <= 768;
+    const initialScale = isMobile ? 1.35 : 1.75;
 
     const introRect = introLogo.getBoundingClientRect();
     const targetRect = targetLogo.getBoundingClientRect();
@@ -250,30 +257,31 @@ function initGsapAnimations() {
 
     introTimeline
       .fromTo(introLogo,
-        { opacity: 0, scale: 1.8, filter: 'blur(12px) drop-shadow(0 0 35px rgba(169, 116, 79, 0.6))' },
-        { opacity: 1, scale: 1, filter: 'blur(0px) drop-shadow(0 0 20px rgba(169, 116, 79, 0.35))', duration: 0.75, ease: 'power3.out' }
+        { opacity: 0, scale: initialScale, filter: 'blur(10px) drop-shadow(0 0 30px rgba(169, 116, 79, 0.6))' },
+        { opacity: 1, scale: 1, filter: 'blur(0px) drop-shadow(0 0 18px rgba(169, 116, 79, 0.35))', duration: 0.7, ease: 'power3.out' }
       )
       .to(introLogo, {
         x: deltaX,
         y: deltaY,
         scale: scaleRatio,
-        duration: 0.95,
+        duration: isMobile ? 0.85 : 0.95,
         ease: 'power4.inOut',
-        delay: 0.25
+        delay: 0.2
       })
       .to(introOverlay, {
         opacity: 0,
-        duration: 0.4,
+        duration: 0.35,
         ease: 'power2.inOut',
         onComplete: () => {
           introOverlay.style.display = 'none';
+          document.body.classList.remove('no-scroll');
           gsap.set(targetLogo, { opacity: 1 });
         }
-      }, '-=0.4')
+      }, '-=0.35')
       .fromTo(brandName,
-        { opacity: 0, x: -12 },
-        { opacity: 1, x: 0, duration: 0.45, ease: 'power2.out' },
-        '-=0.25'
+        { opacity: 0, x: -10 },
+        { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' },
+        '-=0.2'
       );
   }
 
@@ -344,20 +352,22 @@ function initGsapAnimations() {
     });
   }
 
-  // 3. Magnetic Hover Physics for Primary/Secondary CTA Buttons & Dock Items
-  const magneticElements = document.querySelectorAll('.magnetic-btn, .dock-item');
-  magneticElements.forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) * 0.18;
-      const y = (e.clientY - rect.top - rect.height / 2) * 0.18;
-      gsap.to(btn, { x: x, y: y, duration: 0.25, ease: 'power2.out' });
-    });
+  // 3. Magnetic Hover Physics for Desktop (Fine Pointers Only)
+  if (window.matchMedia('(pointer: fine)').matches) {
+    const magneticElements = document.querySelectorAll('.magnetic-btn, .dock-item');
+    magneticElements.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.18;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.18;
+        gsap.to(btn, { x: x, y: y, duration: 0.25, ease: 'power2.out' });
+      });
 
-    btn.addEventListener('mouseleave', () => {
-      gsap.to(btn, { x: 0, y: 0, duration: 0.4, ease: 'elastic.out(1, 0.4)' });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.4, ease: 'elastic.out(1, 0.4)' });
+      });
     });
-  });
+  }
 
   // 4. Subtle Card Hover Micro-scale Physics
   const allCards = document.querySelectorAll('.experience-card, .feature-card, .skill-category-card');
