@@ -320,6 +320,28 @@ body::before {
 }
 
 .btn-sm {
+  font-size: 13px;
+  padding: 6px 12px;
+  gap: 6px;
+}
+
+.btn-nda {
+  background-color: rgba(28, 21, 16, 0.6);
+  color: var(--color-ink-subtle);
+  border: 1px dashed var(--color-hairline-strong);
+  cursor: not-allowed;
+  opacity: 0.75;
+  user-select: none;
+}
+
+.card-action-row {
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.btn-sm {
   padding: 6px 10px;
   font-size: 13px;
 }
@@ -480,6 +502,11 @@ body::before {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+.nav-resume-btn {
+  width: auto !important;
+  flex-shrink: 0;
 }
 
 /* Preloader Intro Overlay */
